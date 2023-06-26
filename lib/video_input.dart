@@ -13,6 +13,7 @@ class VideoInput extends StatefulWidget
 
 class _VideoInput extends State<VideoInput>
 { 
+  // ignore: unused_field
   File? _selectedVideo;
 
   void _takeVideo() async {
@@ -23,10 +24,8 @@ class _VideoInput extends State<VideoInput>
 
     setState(() {
       _selectedVideo=File(pickedVideo.path);
-    });
-   
+    });  
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +35,23 @@ class _VideoInput extends State<VideoInput>
       label: const Text('Take a Video to detect Posture',style: TextStyle(fontSize: 20,color: Colors.white)),
       onPressed: _takeVideo,
     );
-    
-  
+      
  return Scaffold(
       appBar: AppBar(
-        title: const Text('Workout Posture Correction',style: TextStyle(fontFamily: 'Times New Roman',color: Colors.white)),
+        title: const Text('Workout Posture Correction',style: TextStyle(color: Colors.black)),
+        backgroundColor:const Color.fromARGB(255, 47, 227, 255),
+        elevation: 15,
+        shadowColor: const Color.fromARGB(255, 134, 69, 69),
        ),
       body:
           Container(
             child: Center(
               child: Container(  //allows to control the size& alignment of content inside the container
               decoration: BoxDecoration(    //to give border for the image button icon
+              color: Colors.black,
                 border: Border.all(
                   width: 1,
-                  color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+                  color: Colors.white,
                 ),
               ),
               height: 250,
@@ -62,7 +64,6 @@ class _VideoInput extends State<VideoInput>
     );
   }
 }
-
 
 
 
